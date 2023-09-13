@@ -12,7 +12,7 @@ export const Layout = () => {
     if (pathname.startsWith("/protected") && !user) {
       navigate(LOGIN);
     }
-  }, [pathname, user]);
+  }, [navigate, pathname, user]);
 
   if (isLoading) return <h3>Loading...</h3>;
 

@@ -10,10 +10,14 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
+import { useLogin } from "../hooks/auth";
 import { Link as RouterLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { REGISTER } from "../routes";
 
 export const Login = () => {
+  const { login, isLoading } = useLogin();
+  const { register } = useForm();
   return (
     <Center w="100%" h="100vh">
       <Box mx="1" maxW="md" p="9" borderWidth="1px" borderRadius="lg">
