@@ -7,17 +7,38 @@ import {
   FormErrorMessage,
   Input,
   Button,
-  Link,
+  Link as ChakraLink,
   Text,
 } from "@chakra-ui/react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import { useLogin } from "../hooks/auth";
 import { Link as RouterLink } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import { REGISTER } from "../routes";
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+});
 
 export const Login = () => {
   const { login, isLoading } = useLogin();
-  const { register } = useForm();
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values, { resetForm }) => {
+      console.log(values);
+      resetForm();
+    },
+  });
   return (
     <Center w="100%" h="100vh">
       <Box mx="1" maxW="md" p="9" borderWidth="1px" borderRadius="lg">
@@ -25,16 +46,42 @@ export const Login = () => {
           Log In
         </Heading>
 
-        <form onSubmit={() => {}}>
-          <FormControl isInvalid={false} py="2">
+        <form onSubmit={formik.handleSubmit}>
+          <FormControl
+            py="2"
+            isInvalid={
+              formik.touched.email && formik.errors.email ? true : false
+            }
+          >
             <FormLabel>Email</FormLabel>
-            <Input type="email" placeholder="user@email.com" />
-            <FormErrorMessage>This is an error message</FormErrorMessage>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="user@email.com"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+            />
+            <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
           </FormControl>
-          <FormControl isInvalid={false} py="2">
+          <FormControl
+            py="2"
+            isInvalid={
+              formik.touched.password && formik.errors.password ? true : false
+            }
+          >
             <FormLabel>Password</FormLabel>
-            <Input type="password" placeholder="password" />
-            <FormErrorMessage>This is an error message</FormErrorMessage>
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="password"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
+            />
+            <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
           </FormControl>
           <Button
             mt="4"
@@ -49,15 +96,17 @@ export const Login = () => {
           </Button>
         </form>
         <Text fontSize={"xlg"} align={"center"} mt="6">
-          Don't have an accout?{" "}
-          <Link
+          Don't have an account?{" "}
+          <ChakraLink
+            as={RouterLink}
             color={"facebook.600"}
             _hover={{ background: "facebook.100" }}
             fontWeight={"medium"}
             textDecor={"underline"}
+            to={REGISTER}
           >
-            <RouterLink to={REGISTER}>Register</RouterLink>
-          </Link>
+            Register
+          </ChakraLink>
         </Text>
       </Box>
     </Center>
