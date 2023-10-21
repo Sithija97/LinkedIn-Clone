@@ -12,11 +12,12 @@ import {
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useLogin } from "../hooks/auth";
+import { useRegister } from "../hooks/auth";
 import { Link as RouterLink } from "react-router-dom";
-import { REGISTER } from "../routes";
+import { LOGIN } from "../routes";
 
 const validationSchema = Yup.object().shape({
+  username: Yup.string().required("Username is required"),
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required"),
@@ -26,25 +27,55 @@ const validationSchema = Yup.object().shape({
 });
 
 export const Register = () => {
+  const { register, isLoading } = useRegister();
+
+  const handleSubmit = async (values: {
+    username: string;
+    email: string;
+    password: string;
+  }) => {
+    const { username, email, password } = values;
+    await register({ username, email, password, redirectTo: LOGIN });
+    formik.resetForm();
+  };
+
   const formik = useFormik({
     initialValues: {
+      username: "",
       email: "",
       password: "",
     },
     validationSchema: validationSchema,
-    onSubmit: (values, { resetForm }) => {
-      console.log(values);
-      resetForm();
+    onSubmit: (values) => {
+      handleSubmit(values);
     },
   });
   return (
     <Center w="100%" h="100vh">
       <Box mx="1" maxW="md" p="9" borderWidth="1px" borderRadius="lg">
         <Heading mb="4" size="lg" textAlign="center">
-          Log In
+          Register
         </Heading>
 
         <form onSubmit={formik.handleSubmit}>
+          <FormControl
+            py="2"
+            isInvalid={
+              formik.touched.username && formik.errors.username ? true : false
+            }
+          >
+            <FormLabel>Username</FormLabel>
+            <Input
+              id="username"
+              name="username"
+              type="username"
+              placeholder="username"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.username}
+            />
+            <FormErrorMessage>{formik.errors.username}</FormErrorMessage>
+          </FormControl>
           <FormControl
             py="2"
             isInvalid={
@@ -88,8 +119,8 @@ export const Register = () => {
             bg="facebook.400"
             size="md"
             w="full"
-            isLoading={false}
-            loadingText="Logging In"
+            isLoading={isLoading}
+            loadingText="Signing Up"
           >
             Register
           </Button>
@@ -102,7 +133,7 @@ export const Register = () => {
             _hover={{ background: "facebook.100" }}
             fontWeight={"medium"}
             textDecor={"underline"}
-            to={REGISTER}
+            to={LOGIN}
           >
             Login
           </ChakraLink>
