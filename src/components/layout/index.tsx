@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { LOGIN } from "../../routes";
 import { useAuth } from "../../hooks/auth";
+import { Navbar } from "../navbar";
 
 export const Layout = () => {
   const { pathname } = useLocation();
@@ -17,8 +18,9 @@ export const Layout = () => {
   if (isLoading) return <h3>Loading...</h3>;
 
   return (
-    <div>
-      Layout <Outlet />
-    </div>
+    <>
+      <Navbar />
+      <Outlet />
+    </>
   );
 };

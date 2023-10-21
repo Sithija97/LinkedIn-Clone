@@ -28,6 +28,14 @@ const validationSchema = Yup.object().shape({
 export const Login = () => {
   const { login, isLoading } = useLogin();
 
+  const handleSubmit = async (values: { email: string; password: string }) => {
+    const { email, password } = values;
+    const succeeded = await login({ email, password });
+    if (succeeded) {
+      formik.resetForm();
+    }
+  };
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -35,8 +43,7 @@ export const Login = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values, { resetForm }) => {
-      console.log(values);
-      resetForm();
+      handleSubmit(values);
     },
   });
   return (
@@ -87,9 +94,10 @@ export const Login = () => {
             mt="4"
             type="submit"
             colorScheme="facebook"
+            bg="facebook.400"
             size="md"
             w="full"
-            isLoading={false}
+            isLoading={isLoading}
             loadingText="Logging In"
           >
             Log In

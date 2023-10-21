@@ -85,6 +85,7 @@ export const Register = () => {
             mt="4"
             type="submit"
             colorScheme="facebook"
+            bg="facebook.400"
             size="md"
             w="full"
             isLoading={false}
