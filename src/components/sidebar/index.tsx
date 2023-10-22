@@ -1,19 +1,24 @@
-import { Box, Button, Code, Spinner, Stack } from "@chakra-ui/react";
+import { Box, Button, Center, Code, Spinner, Stack } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { PROTECTED, USERS } from "../../routes";
 import { useAuth } from "../../hooks/auth";
-import { User } from "../../models";
+import { IUser } from "../../models";
 import { Avatar } from "../profile/avatar";
 
 interface IProps {
-  user: User | null;
+  user: IUser | null;
   isLoading: boolean;
 }
 
 const ActiveUser = () => {
   const { user, isLoading }: IProps = useAuth();
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <Center my="10">
+        <Spinner />
+      </Center>
+    );
   return (
     <Stack align="center" spacing="5" my="8">
       <Avatar user={user} />

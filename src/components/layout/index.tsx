@@ -3,7 +3,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { LOGIN } from "../../routes";
 import { useAuth } from "../../hooks/auth";
 import { Navbar, Sidebar } from "../index";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Center, Flex, Spinner } from "@chakra-ui/react";
 
 export const Layout = () => {
   const { pathname } = useLocation();
@@ -16,7 +16,12 @@ export const Layout = () => {
     }
   }, [pathname, user, isLoading, navigate]);
 
-  if (isLoading) return <h3>Loading...</h3>;
+  if (isLoading)
+    return (
+      <Center my="10" w="100%" h="100vh">
+        <Spinner />
+      </Center>
+    );
 
   return (
     <>

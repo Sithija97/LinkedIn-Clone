@@ -25,11 +25,15 @@ const validationSchema = Yup.object().shape({
     .required("Password is required"),
 });
 
+type LoginData = {
+  email: string;
+  password: string;
+};
+
 export const Login = () => {
   const { login, isLoading } = useLogin();
 
-  const handleSubmit = async (values: { email: string; password: string }) => {
-    const { email, password } = values;
+  const handleSubmit = async ({ email, password }: LoginData) => {
     const succeeded = await login({ email, password });
     if (succeeded) {
       formik.resetForm();

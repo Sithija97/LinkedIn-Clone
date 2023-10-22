@@ -10,15 +10,15 @@ import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { isUsernameExists } from "../utils/isUsernameExists";
-import { User } from "../models";
+import { IUser } from "../models";
 
-interface ILoginProps {
+interface ILogin {
   email: string;
   password: string;
   redirectTo?: string;
 }
 
-interface IRegisterProps {
+interface IRegister {
   username: string;
   email: string;
   password: string;
@@ -28,7 +28,7 @@ interface IRegisterProps {
 export const useAuth = () => {
   const [authUser, authLoading, error] = useAuthState(auth);
   const [isLoading, setLoading] = useState(true);
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<IUser | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +37,7 @@ export const useAuth = () => {
         const ref = doc(db, "users", authUser.uid);
         const docSnap = await getDoc(ref);
         const data = docSnap.data();
-        data ? setUser(data as User) : setUser(null);
+        data ? setUser(data as IUser) : setUser(null);
         setLoading(false);
       }
     };
@@ -56,11 +56,7 @@ export const useLogin = () => {
   const navigate = useNavigate();
   const [isLoading, setLoading] = useState(false);
 
-  const login = async ({
-    email,
-    password,
-    redirectTo = DASHBOARD,
-  }: ILoginProps) => {
+  const login = async ({ email, password, redirectTo = DASHBOARD }: ILogin) => {
     setLoading(true);
 
     try {
@@ -102,7 +98,7 @@ export const useRegister = () => {
     email,
     password,
     redirectTo = LOGIN,
-  }: IRegisterProps) => {
+  }: IRegister) => {
     setLoading(true);
     const usernameExists = await isUsernameExists(username);
     if (usernameExists) {

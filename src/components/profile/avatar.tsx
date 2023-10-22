@@ -1,11 +1,11 @@
 import React from "react";
 import { Avatar as ChakraAvatar } from "@chakra-ui/react";
-import { User } from "../../models";
+import { IUser } from "../../models";
 import { Link } from "react-router-dom";
 import { PROTECTED } from "../../routes";
 
 interface IProps {
-  user: User | null;
+  user: IUser | null;
 }
 
 export const Avatar = ({ user }: IProps) => {
