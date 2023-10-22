@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { LOGIN } from "../../routes";
 import { useAuth } from "../../hooks/auth";
-import { Navbar } from "../navbar";
+import { Navbar, Sidebar } from "../index";
+import { Box, Flex } from "@chakra-ui/react";
 
 export const Layout = () => {
   const { pathname } = useLocation();
@@ -10,17 +11,22 @@ export const Layout = () => {
   const { user, isLoading } = useAuth();
 
   useEffect(() => {
-    if (pathname.startsWith("/protected") && !user) {
+    if (!isLoading && pathname.startsWith("/protected") && !user) {
       navigate(LOGIN);
     }
-  }, [navigate, pathname, user]);
+  }, [pathname, user, isLoading, navigate]);
 
   if (isLoading) return <h3>Loading...</h3>;
 
   return (
     <>
       <Navbar />
-      <Outlet />
+      <Flex pt="16" pb="12" mx="auto" w="full" maxW="1200px">
+        <Box w="900px">
+          <Outlet />
+        </Box>
+        <Sidebar />
+      </Flex>
     </>
   );
 };

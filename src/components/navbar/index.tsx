@@ -16,7 +16,7 @@ export const Navbar = () => {
       height={16}
       zIndex={3}
       justify="center"
-      bg="facebook.400"
+      //   bg="facebook.400"
     >
       <Flex px="4" w="full" align="center" maxW="1200px">
         <Link color="white" as={RouterLink} to={DASHBOARD} fontWeight="bold">

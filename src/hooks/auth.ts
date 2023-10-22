@@ -4,12 +4,13 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DASHBOARD, LOGIN } from "../routes";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { isUsernameExists } from "../utils/isUsernameExists";
+import { User } from "../models";
 
 interface ILoginProps {
   email: string;
@@ -25,7 +26,28 @@ interface IRegisterProps {
 }
 
 export const useAuth = () => {
-  const [user, isLoading, error] = useAuthState(auth);
+  const [authUser, authLoading, error] = useAuthState(auth);
+  const [isLoading, setLoading] = useState(true);
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      if (authUser) {
+        const ref = doc(db, "users", authUser.uid);
+        const docSnap = await getDoc(ref);
+        const data = docSnap.data();
+        data ? setUser(data as User) : setUser(null);
+        setLoading(false);
+      }
+    };
+
+    if (!authLoading) {
+      if (authUser) fetchData();
+      else setLoading(false); // Not signed in
+    }
+  }, [authLoading, authUser]);
+
   return { user, isLoading, error };
 };
 
