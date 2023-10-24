@@ -3,16 +3,18 @@ import { Avatar as ChakraAvatar } from "@chakra-ui/react";
 import { IUser } from "../../models";
 import { Link } from "react-router-dom";
 import { PROTECTED } from "../../routes";
+import { DocumentData } from "firebase/firestore";
 
 interface IProps {
-  user: IUser | null;
+  user: IUser | DocumentData | null | undefined;
+  size?: string;
 }
 
-export const Avatar = ({ user }: IProps) => {
+export const Avatar = ({ user, size = "xl" }: IProps) => {
   return (
     <ChakraAvatar
       name={user?.username}
-      size="xl"
+      size={size}
       src={user?.avatar}
       _hover={{ cursor: "pointer", opacity: "0.8" }}
       as={Link}

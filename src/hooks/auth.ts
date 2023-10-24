@@ -78,6 +78,7 @@ export const useLogin = () => {
         position: "top-right",
         duration: 5000,
       });
+      setLoading(false);
       return false;
     }
 

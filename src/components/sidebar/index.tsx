@@ -39,7 +39,7 @@ export const Sidebar = () => {
   return (
     <Box
       px="6"
-      height="100vh"
+      height="85vh"
       w="100%"
       maxW="300px"
       borderLeft="1px solid"

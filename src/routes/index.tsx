@@ -1,7 +1,6 @@
-import { Layout } from "../components";
-import { Dashboard, Login, Register, Users } from "../pages";
+import { Comments, Layout } from "../components";
+import { Dashboard, Login, Register, Users, Profile } from "../pages";
 import { createBrowserRouter } from "react-router-dom";
-import { Profile } from "../pages/profile";
 
 export const ROOT = "/";
 export const LOGIN = "/login";
@@ -10,6 +9,7 @@ export const PROTECTED = "/protected";
 export const DASHBOARD = "/protected/dashboard";
 export const USERS = "/protected/users";
 export const PROFILE = "/protected/profile/:id";
+export const COMMENTS = "/protected/comments/:id";
 
 export const router = createBrowserRouter([
   { path: ROOT, element: "Public Root" },
@@ -22,6 +22,7 @@ export const router = createBrowserRouter([
       { path: DASHBOARD, element: <Dashboard /> },
       { path: USERS, element: <Users /> },
       { path: PROFILE, element: <Profile /> },
+      { path: COMMENTS, element: <Comments /> },
     ],
   },
 ]);

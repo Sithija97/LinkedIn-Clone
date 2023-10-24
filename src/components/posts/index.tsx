@@ -1,24 +1,22 @@
 import React from "react";
-import { Box, Center, Spinner, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { DocumentData } from "firebase/firestore";
 import { Post } from "./post";
 import { IPost } from "../../models";
 
 interface IProps {
   posts: IPost[] | DocumentData[] | undefined;
-  isLoading: boolean;
 }
 
-export const Posts = ({ posts, isLoading }: IProps) => {
-  if (isLoading)
-    return (
-      <Center my="10" w="100%" h="100vh">
-        <Spinner />
-      </Center>
-    );
-
+export const Posts = ({ posts }: IProps) => {
   return (
-    <Box px="4">
+    <Box
+      px="4"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+    >
       {posts?.length === 0 ? (
         <Text textAlign="center" fontSize="large">
           No posts yet...
