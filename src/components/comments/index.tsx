@@ -15,14 +15,16 @@ export const Comments = () => {
       </Center>
     );
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Post post={post} />
-      <NewComment />
-    </Box>
+    <>
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Post post={post} />
+      </Box>
+      <NewComment post={post} />
+    </>
   );
 };
