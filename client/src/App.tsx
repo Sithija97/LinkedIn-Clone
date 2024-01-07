@@ -1,9 +1,13 @@
 import "./App.css";
+import { Feed, Navbar } from "./components";
 
 function App() {
   return (
     <>
-      <p>hello</p>
+      <div className="bg-slate-100 h-screen overflow-y-hidden">
+        <Navbar />
+        <Feed />
+      </div>
     </>
   );
 }
