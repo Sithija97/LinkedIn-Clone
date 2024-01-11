@@ -3,6 +3,7 @@ import { BiSolidBookAlt } from "react-icons/bi";
 import { MdGroups, MdOutlineAccessTime } from "react-icons/md";
 import { HiOutlineHashtag } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa";
+import logo from "../../assets/logo.svg";
 
 export const Feed = () => {
   return (
@@ -64,31 +65,27 @@ export const Feed = () => {
             <span className="flex items-center my-1 gap-2.5">
               <MdOutlineAccessTime />
               <p className="text-xs font-medium text-gray-500">
-                Web Development
+                React Developers - ReactJS Professional Development Mastermind
               </p>
             </span>
             <span className="flex items-center my-1 gap-2.5">
               <MdOutlineAccessTime />
               <p className="text-xs font-medium text-gray-500">
-                User Interface
+                React Native Developers - React Native Professional Development
+                Mastermind
               </p>
             </span>
             <span className="flex items-center my-1 gap-2.5">
               <MdOutlineAccessTime />
               <p className="text-xs font-medium text-gray-500">
-                Online Learning
+                Java Developers - Java & Springboot Professional Development
+                Mastermind
               </p>
             </span>
             <span className="flex items-center my-1 gap-2.5">
               <MdOutlineAccessTime />
               <p className="text-xs font-medium text-gray-500">
-                React js bootcamp
-              </p>
-            </span>
-            <span className="flex items-center my-1 gap-2.5">
-              <MdOutlineAccessTime />
-              <p className="text-xs font-medium text-gray-500">
-                Java Developers
+                Python Developers - Python Professional Development Mastermind
               </p>
             </span>
 
@@ -98,31 +95,26 @@ export const Feed = () => {
             <span className="flex items-center my-1 gap-2.5">
               <MdGroups />
               <p className="text-xs font-medium text-gray-500">
-                Web Development
+                Java | Spring Boot | AWS Developer's Network 🚀
+              </p>
+            </span>
+
+            <span className="flex items-center my-1 gap-2.5">
+              <MdGroups />
+              <p className="text-xs font-medium text-gray-500">
+                Faculty of Information Technology, University of Moratuwa
               </p>
             </span>
             <span className="flex items-center my-1 gap-2.5">
               <MdGroups />
               <p className="text-xs font-medium text-gray-500">
-                User Interface
+                IT Professionals 🟥 Agile Lean Scrum
               </p>
             </span>
             <span className="flex items-center my-1 gap-2.5">
               <MdGroups />
               <p className="text-xs font-medium text-gray-500">
-                Online Learning
-              </p>
-            </span>
-            <span className="flex items-center my-1 gap-2.5">
-              <MdGroups />
-              <p className="text-xs font-medium text-gray-500">
-                React js bootcamp
-              </p>
-            </span>
-            <span className="flex items-center my-1 gap-2.5">
-              <MdGroups />
-              <p className="text-xs font-medium text-gray-500">
-                Java Developers
+                Interview Tips Study Group - LinkedIn Learning
               </p>
             </span>
 
@@ -195,32 +187,52 @@ export const Feed = () => {
               </span>
             </p>
 
-            <a
-              href="#"
-              className="mt-5 mb-2.5 text-sm font-semibold text-blue-900"
-            >
+            <p className="mt-5 mb-2.5 text-sm font-medium text-blue-900 cursor-pointer">
               Read More
-            </a>
+            </p>
           </div>
         </div>
 
-        <div className="bg-white py-3.5 px-6 rounded-lg my-3">
-          <small>Add</small>
-          <p>Master these 6 Concepts of Wed development</p>
-          <div>
+        <div className="bg-white py-3.5 px-6 rounded-lg my-3 text-center">
+          <small className="float-left font-semibold">Add</small>
+          <p className="mt-7 mb-2">
+            Master these 6 Concepts of Wed development
+          </p>
+          <div className="flex items-center justify-center">
             <img
               src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
               alt="profile image"
-              className="w-15 rounded-full m-auto"
+              className="w-[60px] rounded-full m-1"
             />
             <img
               src="https://www.techjunkie.com/wp-content/uploads/2015/03/apple-logo-black2-1.jpg"
               alt="profile image"
-              className="w-15 rounded-full m-auto"
+              className="w-[60px] rounded-full m-1"
             />
           </div>
-          <b>Brand on Demad in Samsung</b>
-          <a href="">Learn More</a>
+          <b className="block font-medium mt-2">Brand on Demad in Apple</b>
+          <p className="inline-block border border-blue-900 rounded-2xl py-1 px-4 mx-auto mt-5 mb-2.5 text-blue-900">
+            Learn More
+          </p>
+        </div>
+
+        <div className="py-3.5 px-6 text-center">
+          <p className="inline-block text-sm my-1 mx-2">About</p>
+          <p className="inline-block text-sm my-1 mx-2">Accessibility</p>
+          <p className="inline-block text-sm my-1 mx-2">Help Center</p>
+          <p className="inline-block text-sm my-1 mx-2">Privacy Policy</p>
+          <p className="inline-block text-sm my-1 mx-2">Advertising</p>
+          <p className="inline-block text-sm my-1 mx-2">Ad Choices</p>
+          <p className="inline-block text-sm my-1 mx-2">Business Services</p>
+          <p className="inline-block text-sm my-1 mx-2">Get the LinkedIn App</p>
+          <p className="inline-block text-sm my-1 mx-2">More</p>
+
+          <div className="flex items-center justify-center mt-4 gap-1">
+            <img src={logo} alt="linkedin logo" className="w-5 h-5" />
+            <p className="text-sm font-semibold">
+              LinkedIn @ 2024. All right reserved
+            </p>
+          </div>
         </div>
       </div>
     </div>
