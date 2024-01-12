@@ -1,9 +1,13 @@
+import logo from "../../assets/logo.svg";
+import media from "../../assets/media.svg";
+import video from "../../assets/video.svg";
+import events from "../../assets/events.svg";
 import { FaBookmark } from "react-icons/fa";
 import { BiSolidBookAlt } from "react-icons/bi";
 import { MdGroups, MdOutlineAccessTime } from "react-icons/md";
 import { HiOutlineHashtag } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa";
-import logo from "../../assets/logo.svg";
+import { ProfileImage } from "..";
 
 export const Feed = () => {
   return (
@@ -17,11 +21,7 @@ export const Feed = () => {
             className="rounded-t-lg w-full h-28"
           />
           <div className="px-6">
-            <img
-              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
-              alt="profile img"
-              className="w-24 rounded-full bg-white p-4 -mt-11"
-            />
+            <ProfileImage styles="w-24 rounded-full bg-white p-4 -mt-11" />
             <h1 className="text-xl font-semibold text-gray-900">
               Sithija Shehara
             </h1>
@@ -147,13 +147,40 @@ export const Feed = () => {
 
       {/* center */}
       <div className="basis-[47%]">
-        <div className="bg-white">2</div>
+        <div className="bg-white rounded-lg">
+          <div className="flex items-start pt-5 pl-6 pb-2.5">
+            <ProfileImage styles="w-8 rounded-full mr-2.5" />
+            <textarea
+              className="w-full border-none outline-none resize-none bg-transparent mt-1 font-medium"
+              placeholder="Write a post"
+              rows={2}
+            ></textarea>
+          </div>
+
+          <div>
+            <hr />
+            <ul className="flex items-start">
+              <li className="basis-[25%] h-10 text-sm flex items-center justify-center cursor-pointer gap-1">
+                <img src={media} /> Photo
+              </li>
+              <li className="basis-[25%] h-10 text-sm flex items-center justify-center cursor-pointer gap-1">
+                <img src={video} /> Video
+              </li>
+              <li className="basis-[25%] h-10 text-sm flex items-center justify-center cursor-pointer gap-1">
+                <img src={events} /> Event
+              </li>
+              <li className="basis-[25%] h-10 text-sm flex items-center justify-center cursor-pointer gap-1 bg-blue-600 text-white font-semibold rounded-br-lg">
+                Post
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       {/* right */}
       <div className="basis-[25%] items-start">
-        <div className="bg-white py-2.5 px-6 rounded-lg">
-          <div>
+        <div className="bg-white rounded-lg">
+          <div className="py-2.5 px-6 ">
             <span className="flex items-center justify-start gap-2 mb-2 ">
               <h3 className="text-xl font-bold text-gray-600">Trending News</h3>
               <FaLinkedinIn size={22} fill="blue" />
@@ -199,14 +226,10 @@ export const Feed = () => {
             Master these 6 Concepts of Wed development
           </p>
           <div className="flex items-center justify-center">
-            <img
-              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
-              alt="profile image"
-              className="w-[60px] rounded-full m-1"
-            />
+            <ProfileImage styles="w-[60px] rounded-full m-1" />
             <img
               src="https://www.techjunkie.com/wp-content/uploads/2015/03/apple-logo-black2-1.jpg"
-              alt="profile image"
+              alt="apple logo"
               className="w-[60px] rounded-full m-1"
             />
           </div>

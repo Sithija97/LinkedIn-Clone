@@ -4,6 +4,7 @@ import { HiUsers } from "react-icons/hi2";
 import { BsBriefcaseFill } from "react-icons/bs";
 import { BiSolidMessageRoundedDots } from "react-icons/bi";
 import { IoNotificationsSharp, IoSearch } from "react-icons/io5";
+import { ProfileImage } from "..";
 
 export const Navbar = () => {
   return (
@@ -62,11 +63,7 @@ export const Navbar = () => {
 
       {/* right */}
       <div>
-        <img
-          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
-          alt="profile image"
-          className="w-10 rounded-full block cursor-pointer relative"
-        />
+        <ProfileImage styles="w-10 rounded-full block cursor-pointer relative" />
       </div>
     </nav>
   );
