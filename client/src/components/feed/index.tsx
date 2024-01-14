@@ -8,6 +8,7 @@ import { MdGroups, MdOutlineAccessTime } from "react-icons/md";
 import { HiOutlineHashtag } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa";
 import { ProfileImage } from "..";
+import { Post } from "./post";
 
 export const Feed = () => {
   return (
@@ -174,6 +175,51 @@ export const Feed = () => {
               </li>
             </ul>
           </div>
+
+          <Post
+            desctiption="Discipline is not about perfection. Discipline is about continuity.
+        Often, we misconstrue discipline as a relentless pursuit of perfection.
+        This viewpoint can be daunting and, ironically, unproductive.
+        Discipline, at its core, is about maintaining continuity in our actions
+        and decisions, regardless of the pursuit of perfection. The myth of
+        perfection Perfection is a mirage. Chasing it can lead to a cycle of
+        disappointment and demotivation. Instead, embracing imperfection as part
+        of the process is more sustainable. Discipline means staying the course,
+        even when things are less than perfect. Consistency over intensity The
+        key to long-term success is not intense bursts of activity but
+        consistent, daily efforts. It's the small actions, repeated over time,
+        that lead to significant achievements. This approach aligns with the
+        principle of compound growth, where small, regular contributions
+        accumulate into substantial results. embracing imperfection Embracing
+        imperfection allows us to be disciplined without the pressure of
+        unrealistic standards. It encourages learning from mistakes and viewing
+        them as stepping stones rather than roadblocks. Building a continuity
+        mindset To cultivate a continuity mindset: 1. Set realistic goals: Goals
+        should be challenging yet achievable. 2. Create a routine: Regularity
+        breeds familiarity and comfort. 3. Focus on progress, not perfection:
+        Celebrate small wins and learn from setbacks. 4. Be adaptable:
+        Flexibility in approach can help maintain continuity even under changing
+        circumstances. I apply a continuity mindset by setting myself goals
+        around writing (even just a little) everyday. It's a habit that's now
+        just a part of my routine. Even if I'm unable to complete a writing
+        task, it's okay if I achieve micro-goals such as writing a few sentences
+        or a paragraph. That keeps things flexible enough that I'm always making
+        some progress and it keeps me happy. Conclusion Discipline is not about
+        flawless execution but about the resilience to continue despite
+        imperfections. It's about showing up, day after day, committed to your
+        goals, learning, and growing along the way."
+            imgUrl="https://media.licdn.com/dms/image/D5622AQGFvp1k6UElvw/feedshare-shrink_1280/0/1704698536768?e=1707955200&v=beta&t=sA2t4tpFa2phZjWb6QX_VuJNb5mw2VR4qPJrAikcRVE"
+          />
+          <Post
+            desctiption="Oauth 2.0 Explained With Simple Terms. OAuth 2.0 is a powerful and secure framework that allows different applications to securely interact with each other on behalf of users without sharing sensitive credentials.
+The entities involved in OAuth are the User, the Server, and the Identity Provider (IDP). What Can an OAuth Token Do? When you use OAuth, you get an OAuth token that represents your identity and permissions. This token can do a few important things:
+Single Sign-On (SSO): With an OAuth token, you can log into multiple services or apps using just one login, making life easier and safer.
+Authorization Across Systems: The OAuth token allows you to share your authorization or access rights across various systems, so you don't have to log in separately everywhere.
+Accessing User Profile: Apps with an OAuth token can access certain parts of your user profile that you allow, but they won't see everything.
+Remember, OAuth 2.0 is all about keeping you and your data safe while making your online experiences seamless and hassle-free across different applications and services.
+Over to you: Imagine you have a magical power to grant one wish to OAuth 2.0. What would that be? Maybe your suggestions actually lead to OAuth 3."
+            imgUrl="https://media.licdn.com/dms/image/D4E22AQHradwZAkeT-A/feedshare-shrink_800/0/1705126623467?e=1707955200&v=beta&t=xCEyq-RgzdEl17c4c55X-Fd_oYr72wxUXZ1tc6D1qfw"
+          />
         </div>
       </div>
 
@@ -183,7 +229,7 @@ export const Feed = () => {
           <div className="py-2.5 px-6 ">
             <span className="flex items-center justify-start gap-2 mb-2 ">
               <h3 className="text-xl font-bold text-gray-600">Trending News</h3>
-              <FaLinkedinIn size={22} fill="blue" />
+              <FaLinkedinIn size={22} fill="rgb(37, 99, 235)" />
             </span>
 
             <p className="text-[14px] text-gray-600 font-medium flex flex-col mt-2.5">
@@ -253,7 +299,7 @@ export const Feed = () => {
           <div className="flex items-center justify-center mt-4 gap-1">
             <img src={logo} alt="linkedin logo" className="w-5 h-5" />
             <p className="text-sm font-semibold">
-              LinkedIn @ 2024. All right reserved
+              LinkedIn &#169; 2024. All right reserved
             </p>
           </div>
         </div>
