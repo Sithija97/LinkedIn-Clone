@@ -1,20 +1,20 @@
-import logo from "../../assets/logo.svg";
-import media from "../../assets/media.svg";
-import video from "../../assets/video.svg";
-import events from "../../assets/events.svg";
+import logo from "../assets/logo.svg";
+import media from "../assets/media.svg";
+import video from "../assets/video.svg";
+import events from "../assets/events.svg";
 import { FaBookmark } from "react-icons/fa";
 import { BiSolidBookAlt } from "react-icons/bi";
 import { MdGroups, MdOutlineAccessTime } from "react-icons/md";
 import { HiOutlineHashtag } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa";
-import { ProfileImage } from "..";
+import { ProfileImage } from ".";
 import { Post } from "./post";
 
 export const Feed = () => {
   return (
-    <div className="flex flex-wrap justify-between py-[70px] px-[6%] h-full overflow-y-auto">
+    <div className="flex flex-wrap justify-between pt-3 pb-[4.5%] px-[15%] h-full bg">
       {/* left */}
-      <div className="basis-[25%] items-start">
+      <div className="basis-[25%] items-start h-full overflow-y-auto ">
         <div className="bg-white rounded-lg">
           <img
             src="https://img.freepik.com/vektoren-premium/abstrakte-dunkelblaue-moderne-futuristische-wissenschaftstechnologie-high-tech-digitaler-abstrakter-dunkelblauer-bunter-designfahnenhintergrund-vektorabstrakte-grafikdesignfahnenmuster-hintergrundwebschablone_181182-33425.jpg"
@@ -147,7 +147,7 @@ export const Feed = () => {
       </div>
 
       {/* center */}
-      <div className="basis-[47%]">
+      <div className="basis-[47%] h-full overflow-y-auto ">
         <div className="bg-white rounded-lg">
           <div className="flex items-start pt-5 pl-6 pb-2.5">
             <ProfileImage styles="w-8 rounded-full mr-2.5" />
@@ -223,7 +223,7 @@ Over to you: Imagine you have a magical power to grant one wish to OAuth 2.0. Wh
       </div>
 
       {/* right */}
-      <div className="basis-[25%] items-start">
+      <div className="basis-[25%] items-start h-full overflow-y-auto">
         <div className="bg-white rounded-lg">
           <div className="py-2.5 px-6 ">
             <span className="flex items-center justify-start gap-2 mb-2 ">
@@ -231,30 +231,30 @@ Over to you: Imagine you have a magical power to grant one wish to OAuth 2.0. Wh
               <FaLinkedinIn size={22} fill="rgb(37, 99, 235)" />
             </span>
 
-            <p className="text-[14px] text-gray-600 font-medium flex flex-col mt-2.5">
+            <p className="text-xs text-gray-600 font-medium flex flex-col mt-2.5">
               High demand for skilled manpower
-              <span className="text-sm font-medium text-gray-400">
+              <span className="text-xs font-medium text-gray-400">
                 1d ago &middot; 10,966 readers
               </span>
             </p>
 
-            <p className="text-[14px] text-gray-600 font-medium flex flex-col mt-2.5">
+            <p className="text-xs text-gray-600 font-medium flex flex-col mt-2.5">
               Careers growing horizontally too
-              <span className="text-sm font-medium text-gray-400">
+              <span className="text-xs font-medium text-gray-400">
                 2d ago &middot; 8,986 readers
               </span>
             </p>
 
-            <p className="text-[14px] text-gray-600 font-medium flex flex-col mt-2.5">
+            <p className="text-xs text-gray-600 font-medium flex flex-col mt-2.5">
               Microsoft partneers with Open AI
-              <span className="text-sm font-medium text-gray-400">
+              <span className="text-xs font-medium text-gray-400">
                 3d ago &middot; 6,000 readers
               </span>
             </p>
 
-            <p className="text-[14px] text-gray-600 font-medium flex flex-col mt-2.5">
+            <p className="text-xs text-gray-600 font-medium flex flex-col mt-2.5">
               Meta introduces 'Lexical'
-              <span className="text-sm font-medium text-gray-400">
+              <span className="text-xs font-medium text-gray-400">
                 1d ago &middot; 1,600 readers
               </span>
             </p>
@@ -278,26 +278,28 @@ Over to you: Imagine you have a magical power to grant one wish to OAuth 2.0. Wh
               className="w-[60px] rounded-full m-1"
             />
           </div>
-          <b className="block font-medium mt-2">Brand on Demad in Apple</b>
-          <p className="inline-block border border-blue-900 rounded-2xl py-1 px-4 mx-auto mt-5 mb-2.5 text-blue-900">
+          <b className="block text-xs font-medium mt-2">
+            Brand on Demad in Apple
+          </b>
+          <p className="inline-block border border-blue-900 rounded-2xl py-1 px-4 mx-auto mt-5 mb-2.5 text-xs text-blue-900">
             Learn More
           </p>
         </div>
 
         <div className="py-3.5 px-6 text-center">
-          <p className="inline-block text-sm my-1 mx-2">About</p>
-          <p className="inline-block text-sm my-1 mx-2">Accessibility</p>
-          <p className="inline-block text-sm my-1 mx-2">Help Center</p>
-          <p className="inline-block text-sm my-1 mx-2">Privacy Policy</p>
-          <p className="inline-block text-sm my-1 mx-2">Advertising</p>
-          <p className="inline-block text-sm my-1 mx-2">Ad Choices</p>
-          <p className="inline-block text-sm my-1 mx-2">Business Services</p>
-          <p className="inline-block text-sm my-1 mx-2">Get the LinkedIn App</p>
-          <p className="inline-block text-sm my-1 mx-2">More</p>
+          <p className="inline-block text-xs my-1 mx-2">About</p>
+          <p className="inline-block text-xs my-1 mx-2">Accessibility</p>
+          <p className="inline-block text-xs my-1 mx-2">Help Center</p>
+          <p className="inline-block text-xs my-1 mx-2">Privacy Policy</p>
+          <p className="inline-block text-xs my-1 mx-2">Advertising</p>
+          <p className="inline-block text-xs my-1 mx-2">Ad Choices</p>
+          <p className="inline-block text-xs my-1 mx-2">Business Services</p>
+          <p className="inline-block text-xs my-1 mx-2">Get the LinkedIn App</p>
+          <p className="inline-block text-xs my-1 mx-2">More</p>
 
           <div className="flex items-center justify-center mt-4 gap-1">
             <img src={logo} alt="linkedin logo" className="w-5 h-5" />
-            <p className="text-sm font-semibold">
+            <p className="text-xs font-semibold">
               LinkedIn &#169; 2024. All right reserved
             </p>
           </div>

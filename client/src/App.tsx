@@ -1,12 +1,12 @@
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/router";
 import "./App.css";
-import { Feed, Navbar } from "./components";
 
 function App() {
   return (
     <>
       <div className="bg-slate-100 h-screen overflow-y-hidden">
-        <Navbar />
-        <Feed />
+        <RouterProvider router={router} />
       </div>
     </>
   );
