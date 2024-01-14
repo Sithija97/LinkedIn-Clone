@@ -13,7 +13,7 @@ type IProps = {
 
 export const Post = ({ desctiption, imgUrl }: IProps) => {
   return (
-    <div className="bg-white rounded-lg mt-7 pt-5 pl-6 pr-6 pb-2.5">
+    <div className="bg-white rounded-lg mt-3 pt-5 pl-6 pr-6 pb-2.5">
       <div className="flex items-start mb-5">
         <ProfileImage styles="w-8 rounded-full mr-2.5" />
         <div>

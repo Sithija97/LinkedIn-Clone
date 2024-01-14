@@ -175,9 +175,9 @@ export const Feed = () => {
               </li>
             </ul>
           </div>
-
-          <Post
-            desctiption="Discipline is not about perfection. Discipline is about continuity.
+        </div>
+        <Post
+          desctiption="Discipline is not about perfection. Discipline is about continuity.
         Often, we misconstrue discipline as a relentless pursuit of perfection.
         This viewpoint can be daunting and, ironically, unproductive.
         Discipline, at its core, is about maintaining continuity in our actions
@@ -208,19 +208,18 @@ export const Feed = () => {
         flawless execution but about the resilience to continue despite
         imperfections. It's about showing up, day after day, committed to your
         goals, learning, and growing along the way."
-            imgUrl="https://media.licdn.com/dms/image/D5622AQGFvp1k6UElvw/feedshare-shrink_1280/0/1704698536768?e=1707955200&v=beta&t=sA2t4tpFa2phZjWb6QX_VuJNb5mw2VR4qPJrAikcRVE"
-          />
-          <Post
-            desctiption="Oauth 2.0 Explained With Simple Terms. OAuth 2.0 is a powerful and secure framework that allows different applications to securely interact with each other on behalf of users without sharing sensitive credentials.
+          imgUrl="https://media.licdn.com/dms/image/D5622AQGFvp1k6UElvw/feedshare-shrink_1280/0/1704698536768?e=1707955200&v=beta&t=sA2t4tpFa2phZjWb6QX_VuJNb5mw2VR4qPJrAikcRVE"
+        />
+        <Post
+          desctiption="Oauth 2.0 Explained With Simple Terms. OAuth 2.0 is a powerful and secure framework that allows different applications to securely interact with each other on behalf of users without sharing sensitive credentials.
 The entities involved in OAuth are the User, the Server, and the Identity Provider (IDP). What Can an OAuth Token Do? When you use OAuth, you get an OAuth token that represents your identity and permissions. This token can do a few important things:
 Single Sign-On (SSO): With an OAuth token, you can log into multiple services or apps using just one login, making life easier and safer.
 Authorization Across Systems: The OAuth token allows you to share your authorization or access rights across various systems, so you don't have to log in separately everywhere.
 Accessing User Profile: Apps with an OAuth token can access certain parts of your user profile that you allow, but they won't see everything.
 Remember, OAuth 2.0 is all about keeping you and your data safe while making your online experiences seamless and hassle-free across different applications and services.
 Over to you: Imagine you have a magical power to grant one wish to OAuth 2.0. What would that be? Maybe your suggestions actually lead to OAuth 3."
-            imgUrl="https://media.licdn.com/dms/image/D4E22AQHradwZAkeT-A/feedshare-shrink_800/0/1705126623467?e=1707955200&v=beta&t=xCEyq-RgzdEl17c4c55X-Fd_oYr72wxUXZ1tc6D1qfw"
-          />
-        </div>
+          imgUrl="https://media.licdn.com/dms/image/D4E22AQHradwZAkeT-A/feedshare-shrink_800/0/1705126623467?e=1707955200&v=beta&t=xCEyq-RgzdEl17c4c55X-Fd_oYr72wxUXZ1tc6D1qfw"
+        />
       </div>
 
       {/* right */}
