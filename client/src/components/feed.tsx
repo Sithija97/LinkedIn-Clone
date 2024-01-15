@@ -12,7 +12,7 @@ import { Post } from "./post";
 
 export const Feed = () => {
   return (
-    <div className="flex flex-wrap justify-between pt-3 pb-[4.5%] px-[15%] h-full bg">
+    <div className="flex flex-wrap justify-between pt-3 pb-[4.5%] px-[15%] h-full">
       {/* left */}
       <div className="basis-[25%] items-start h-full overflow-y-auto ">
         <div className="bg-white rounded-lg">
@@ -149,10 +149,10 @@ export const Feed = () => {
       {/* center */}
       <div className="basis-[47%] h-full overflow-y-auto ">
         <div className="bg-white rounded-lg">
-          <div className="flex items-start pt-5 pl-6 pb-2.5">
+          <div className="flex items-start pt-3 pl-6 pb-1">
             <ProfileImage styles="w-8 rounded-full mr-2.5" />
             <textarea
-              className="w-full border-none outline-none resize-none bg-transparent mt-1 font-medium"
+              className="w-full border-none outline-none resize-none bg-transparent mt-2 font-base text-xs"
               placeholder="Write a post"
               rows={2}
             ></textarea>
@@ -287,19 +287,19 @@ Over to you: Imagine you have a magical power to grant one wish to OAuth 2.0. Wh
         </div>
 
         <div className="py-3.5 px-6 text-center">
-          <p className="inline-block text-xs my-1 mx-2">About</p>
-          <p className="inline-block text-xs my-1 mx-2">Accessibility</p>
-          <p className="inline-block text-xs my-1 mx-2">Help Center</p>
-          <p className="inline-block text-xs my-1 mx-2">Privacy Policy</p>
-          <p className="inline-block text-xs my-1 mx-2">Advertising</p>
-          <p className="inline-block text-xs my-1 mx-2">Ad Choices</p>
-          <p className="inline-block text-xs my-1 mx-2">Business Services</p>
-          <p className="inline-block text-xs my-1 mx-2">Get the LinkedIn App</p>
-          <p className="inline-block text-xs my-1 mx-2">More</p>
+          <p className="inline-block text-sm my-1 mx-2">About</p>
+          <p className="inline-block text-sm my-1 mx-2">Accessibility</p>
+          <p className="inline-block text-sm my-1 mx-2">Help Center</p>
+          <p className="inline-block text-sm my-1 mx-2">Privacy Policy</p>
+          <p className="inline-block text-sm my-1 mx-2">Advertising</p>
+          <p className="inline-block text-sm my-1 mx-2">Ad Choices</p>
+          <p className="inline-block text-sm my-1 mx-2">Business Services</p>
+          <p className="inline-block text-sm my-1 mx-2">Get the LinkedIn App</p>
+          <p className="inline-block text-sm my-1 mx-2">More</p>
 
           <div className="flex items-center justify-center mt-4 gap-1">
             <img src={logo} alt="linkedin logo" className="w-5 h-5" />
-            <p className="text-xs font-semibold">
+            <p className="text-sm font-semibold">
               LinkedIn &#169; 2024. All right reserved
             </p>
           </div>

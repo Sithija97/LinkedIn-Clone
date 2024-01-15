@@ -27,7 +27,7 @@ export const Post = ({ desctiption, imgUrl }: IProps) => {
         </div>
       </div>
 
-      <p className="text-xs mb-4">{desctiption}</p>
+      <p className="text-sm mb-4">{desctiption}</p>
 
       <img src={imgUrl} width="100%" />
 
