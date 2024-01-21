@@ -11,7 +11,7 @@ export const Profile = () => {
       <div className="basis-[73%] h-full overflow-y-auto">
         <div className="bg-white rounded-lg">
           <img
-            src="https://img.freepik.com/vektoren-premium/abstrakte-dunkelblaue-moderne-futuristische-wissenschaftstechnologie-high-tech-digitaler-abstrakter-dunkelblauer-bunter-designfahnenhintergrund-vektorabstrakte-grafikdesignfahnenmuster-hintergrundwebschablone_181182-33425.jpg"
+            src="https://media.licdn.com/dms/image/D5616AQG24EVnwQMcsA/profile-displaybackgroundimage-shrink_350_1400/0/1693374716214?e=1710979200&v=beta&t=0mUbqzRB6kwg3pUQ2YYG8C6MfF6s5B8Y1J2SUpfR0QQ"
             alt="cover-pic"
             className="w-full rounded-t-lg"
           />

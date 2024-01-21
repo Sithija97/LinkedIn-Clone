@@ -17,9 +17,9 @@ export const Feed = () => {
       <div className="basis-[25%] items-start h-full overflow-y-auto ">
         <div className="bg-white rounded-lg">
           <img
-            src="https://img.freepik.com/vektoren-premium/abstrakte-dunkelblaue-moderne-futuristische-wissenschaftstechnologie-high-tech-digitaler-abstrakter-dunkelblauer-bunter-designfahnenhintergrund-vektorabstrakte-grafikdesignfahnenmuster-hintergrundwebschablone_181182-33425.jpg"
+            src="https://media.licdn.com/dms/image/D5616AQG24EVnwQMcsA/profile-displaybackgroundimage-shrink_350_1400/0/1693374716214?e=1710979200&v=beta&t=0mUbqzRB6kwg3pUQ2YYG8C6MfF6s5B8Y1J2SUpfR0QQ"
             alt="background img"
-            className="rounded-t-lg w-full h-28"
+            className="rounded-t-lg w-full h-28 object-cover"
           />
           <div className="px-6">
             <ProfileImage styles="w-24 rounded-full bg-white p-4 -mt-11" />

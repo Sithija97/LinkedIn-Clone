@@ -1,5 +1,5 @@
 const url =
-  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D";
+  "https://media.licdn.com/dms/image/D5603AQEfkQw-4ldn0A/profile-displayphoto-shrink_200_200/0/1672366176271?e=1710979200&v=beta&t=lBdfjv1xNQp8JeJF4nNHZaZVjiu2idHXi0eepbNvxX4";
 
 type IProps = {
   src?: string;
